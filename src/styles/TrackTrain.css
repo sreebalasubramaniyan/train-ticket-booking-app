@@ -1,0 +1,204 @@
+.track-page {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.track-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+}
+
+.track-header {
+    padding: 1rem 1.5rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.track-header .back-link {
+    color: #0066ff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.track-header h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.train-info {
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.train-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: #1a1a2e;
+}
+
+.train-info .route {
+    margin: 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+.train-info .date {
+    margin: 0.25rem 0 0 0;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.status-text {
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.progress-section {
+    padding: 2rem 1.5rem;
+}
+
+.progress-track {
+    position: relative;
+    height: 40px;
+    margin-bottom: 0.5rem;
+}
+
+.progress-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #e0e0e0;
+    transform: translateY(-50%);
+    border-radius: 2px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #16c784;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.train-marker {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: left 0.3s ease;
+}
+
+.train-icon {
+    font-size: 1.5rem;
+}
+
+.station-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.timing-info {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-top: 1px solid #eee;
+}
+
+.timing-item {
+    text-align: center;
+}
+
+.timing-item .label {
+    display: block;
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 0.25rem;
+}
+
+.timing-item .value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.booking-ref {
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #eee;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    background: #0066ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 1rem;
+}
+
+.loading-spinner {
+    padding: 3rem;
+    text-align: center;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .track-page {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+
+    .train-info {
+        padding: 1rem;
+    }
+
+    .timing-info {
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .track-header {
+        padding: 0.75rem 1rem;
+    }
+
+    .train-info {
+        padding: 1rem;
+    }
+
+    .train-info h3 {
+        font-size: 1rem;
+    }
+
+    .status-text {
+        padding: 1rem;
+    }
+
+    .progress-section {
+        padding: 1rem;
+    }
+
+    .timing-info {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}

@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import "../styles/Book.css";
 
 export default function Book() {
   const { state } = useLocation();

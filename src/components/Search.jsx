@@ -1,6 +1,7 @@
 import { trains } from '../../data/data'
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import "../styles/Search.css";
 
 function isValidDate(dateStr) {
   const date = new Date(dateStr);

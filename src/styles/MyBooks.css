@@ -1,0 +1,202 @@
+.mybooks-page {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+.mybooks-page h2 { margin-bottom: 1.5rem; color: #333; }
+
+.no-bookings {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+}
+.no-bookings p { color: #666; margin-bottom: 1rem; }
+.book-now-btn {
+    padding: 0.6rem 1.5rem;
+    background: #0066ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-block;
+}
+.book-now-btn:hover { background: #0052cc; }
+
+.tickets-list { display: flex; flex-direction: column; gap: 1rem; }
+
+.ticket {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    background: #f8f9fa;
+    border-bottom: 1px dashed #ddd;
+}
+.header-left { display: flex; flex-direction: column; gap: 0.25rem; }
+.header-left .pnr { font-size: 0.85rem; font-weight: 600; color: #333; }
+.header-left .train { font-size: 0.8rem; color: #666; }
+.status {
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+.status.confirmed { background: #e8f4ea; color: #16c784; }
+.status.cancelled { background: #ffe8e8; color: #ff4757; }
+
+.ticket-body { padding: 1.25rem; }
+
+.route-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.route-section .station { text-align: center; }
+.route-section .time {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+.route-section .name {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.25rem;
+}
+.route-section .route-line {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+.route-section .route-line::before,
+.route-section .route-line::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 2px;
+    background: #ddd;
+}
+.route-section .route-line::before { left: 0; }
+.route-section .route-line::after { right: 0; }
+.route-section .duration {
+    font-size: 0.75rem;
+    color: #888;
+    background: white;
+    padding: 0 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.info-section {
+    display: flex;
+    gap: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+.info-section .info { display: flex; flex-direction: column; }
+.info-section .label { font-size: 0.7rem; color: #888; margin-bottom: 0.2rem; }
+.info-section .value { font-size: 0.9rem; font-weight: 600; color: #333; }
+.info-section .value.price { color: #16c784; }
+
+.ticket-actions {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    background: #f8f9fa;
+    border-top: 1px solid #eee;
+}
+.track-btn, .cancel-btn {
+    flex: 1;
+    padding: 0.6rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+}
+.track-btn {
+    background: white;
+    border: 1px solid #ddd;
+    color: #333;
+}
+.track-btn:hover { background: #f5f5f5; }
+.cancel-btn {
+    background: #ff4757;
+    color: white;
+}
+.cancel-btn:hover { background: #e63946; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mybooks-page {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+
+    .mybooks-page h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .ticket-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .route-section {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .route-section .route-line {
+        display: none;
+    }
+
+    .route-section .station {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .info-section {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .info-section .info {
+        min-width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .ticket-header {
+        padding: 0.75rem 1rem;
+    }
+
+    .ticket-body {
+        padding: 1rem;
+    }
+
+    .ticket-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .track-btn, .cancel-btn {
+        width: 100%;
+    }
+}

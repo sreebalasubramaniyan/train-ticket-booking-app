@@ -1,435 +1,3 @@
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #1a1a2e;
-    color: white;
-}
-
-.navbar .logo { font-size: 1.5rem; font-weight: bold; }
-.navbar .nav-links a { color: white; text-decoration: none; margin-left: 1.5rem; }
-.navbar .nav-links a:hover { text-decoration: underline; }
-
-.book-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 700px;
-    border: 1px solid #e0e0e0;
-    padding: 30px;
-    margin: 2rem auto;
-    border-radius: 16px;
-    background: white;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    box-sizing: border-box;
-}
-
-.box {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    justify-content: space-around;
-    margin: 5px 0px;
-    overflow: hidden;
-    min-width: 0;
-}
-
-.box > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: stretch;
-    gap: 8px;
-    min-width: 0;
-    overflow: hidden;
-}
-
-.box div p {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #555;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin: 0;
-}
-
-.box input, .box select {
-    width: 100%;
-    height: 44px;
-    padding: 0 14px;
-    font-size: 1rem;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    background: white;
-    color: #333;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    outline: none;
-    box-sizing: border-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.box input:focus, .box select:focus {
-    border-color: #0066ff;
-    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
-}
-
-.box input::placeholder {
-    color: #aaa;
-}
-
-.box select {
-    height: 48px;
-    cursor: pointer;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 14px center;
-    padding-right: 36px;
-}
-
-.Date { cursor: pointer; }
-
-.search-btn { margin: 25px 0px; }
-
-.search {
-    width: 100%;
-    height: 48px;
-    border-radius: 8px;
-    border: none;
-    background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%);
-    color: white;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.search:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
-}
-
-.title {
-    font-size: 1.75rem;
-    color: #1a1a2e;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.search-results {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-.search-results h2 {
-    margin-bottom: 1.5rem;
-    color: #333;
-}
-
-.train-list { display: flex; flex-direction: column; gap: 1rem; }
-
-.train-card {
-    background: white;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 1.25rem;
-}
-
-.train-route-header { margin-bottom: 0.5rem; }
-
-.route-tag {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #1a1a2e;
-}
-
-.train-name-row {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.train-name-row h3 {
-    margin: 0;
-    font-size: 1rem;
-    color: #1a1a2e;
-}
-
-.train-number {
-    font-size: 0.8rem;
-    color: #888;
-    font-weight: 500;
-}
-
-.train-time-row {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.time-info { text-align: center; min-width: 100px; }
-
-.time-info .time {
-    display: block;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #333;
-}
-
-.time-info .station {
-    display: block;
-    font-size: 0.9rem;
-    color: #555;
-}
-
-.duration-info {
-    flex: 1;
-    text-align: center;
-}
-
-.duration-info .via {
-    display: block;
-    font-size: 0.8rem;
-    color: #666;
-    margin-bottom: 0.25rem;
-}
-
-.duration-info .duration {
-    display: block;
-    font-size: 0.75rem;
-    color: #999;
-}
-
-.train-run-days {
-    display: flex;
-    gap: 0.35rem;
-    margin-bottom: 1rem;
-}
-
-.train-run-days .day {
-    background: #e8f0ff;
-    color: #0066cc;
-    padding: 0.2rem 0.5rem;
-    
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 500;
-}
-
-.train-classes {
-    display: flex;
-    gap: 1.5rem;
-    padding: 1rem 0;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 1rem;
-}
-
-.class-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 60px;
-}
-
-.class-item .class-code {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #333;
-    background: #f5f5f5;
-    padding: 0.25rem 0.6rem;
-    border-radius: 4px;
-    margin-bottom: 0.3rem;
-}
-
-.class-item .class-avail {
-    font-size: 0.9rem;
-    color: #16c784;
-    font-weight: 500;
-}
-
-.class-item.unavailable .class-avail {
-    color: #ff4757;
-}
-
-.check-avail-btn {
-    padding: 0.6rem 1.5rem;
-    background: #0066ff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9rem;
-}
-.check-avail-btn:hover { background: #0052cc; }
-
-.user-section {
-    position: relative;
-    display: inline-block;
-    margin-left: 1.5rem;
-}
-
-.user-link {
-    color: white;
-    cursor: pointer;
-}
-
-.user-popup {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    min-width: 200px;
-    z-index: 1000;
-    margin-top: 0.5rem;
-    overflow: hidden;
-}
-
-.user-info {
-    padding: 1rem;
-    background: #f8f9fa;
-    border-bottom: 1px solid #eee;
-}
-
-.user-info .user-name {
-    margin: 0;
-    font-weight: 600;
-    color: #333;
-}
-
-.user-info .user-email {
-    margin: 0.25rem 0 0 0;
-    font-size: 0.85rem;
-    color: #666;
-}
-
-.user-actions {
-    display: flex;
-    flex-direction: column;
-}
-
-.user-actions a,
-.user-actions button {
-    display: block;
-    padding: 0.75rem 1rem;
-    color: #333;
-    text-decoration: none;
-    font-size: 0.9rem;
-    border: none;
-    background: none;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-}
-
-.user-actions a:hover,
-.user-actions button:hover {
-    background: #f5f5f5;
-}
-
-.user-actions button {
-    color: #ff4757;
-    border-top: 1px solid #eee;
-}
-
-.login-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh;
-}
-
-.login-form {
-    background: white;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 2rem;
-    width: 100%;
-    max-width: 400px;
-}
-
-.login-form h2 {
-    margin: 0 0 1.5rem 0;
-    text-align: center;
-    color: #1a1a2e;
-}
-
-.login-form .error {
-    color: #ff4757;
-    font-size: 0.85rem;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.form-group {
-    margin-bottom: 1rem;
-}
-
-.form-group label {
-    display: block;
-    font-size: 0.85rem;
-    color: #666;
-    margin-bottom: 0.5rem;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 1rem;
-    box-sizing: border-box;
-}
-
-.form-group input:focus {
-    outline: none;
-    border-color: #0066ff;
-}
-
-.login-btn {
-    width: 100%;
-    padding: 0.75rem;
-    background: #16c784;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-top: 0.5rem;
-}
-.login-btn:hover { background: #14a86e; }
-
-.switch-mode {
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 0.85rem;
-    color: #666;
-}
-.switch-mode .link { color: #0066ff; cursor: pointer; }
-.switch-mode .link:hover { text-decoration: underline; }
-
-.book-btn {
-    display: inline-block;
-    padding: 0.6rem 1.5rem;
-    background: #0066ff;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    border: none;
-    cursor: pointer;
-}
-.book-btn:hover { background: #0052cc; }
-
 .book-page {
     max-width: 600px;
     margin: 2rem auto;
@@ -596,6 +164,19 @@
 .confirm-btn:hover { background: #14a86e; }
 .confirm-btn:disabled { background: #ccc; cursor: not-allowed; }
 
+.book-btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    background: #0066ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+}
+.book-btn:hover { background: #0052cc; }
+
 .success-card {
     max-width: 700px;
     margin: 2rem auto;
@@ -681,375 +262,86 @@
     font-size: 0.9rem;
 }
 
-.mybooks-page {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-.mybooks-page h2 { margin-bottom: 1.5rem; color: #333; }
+/* Responsive */
+@media (max-width: 768px) {
+    .book-page {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
 
-.no-bookings {
-    text-align: center;
-    padding: 3rem;
-    background: white;
-    border-radius: 12px;
-    border: 1px solid #e0e0e0;
-}
-.no-bookings p { color: #666; margin-bottom: 1rem; }
-.book-now-btn {
-    padding: 0.6rem 1.5rem;
-    background: #0066ff;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    display: inline-block;
-}
-.book-now-btn:hover { background: #0052cc; }
+    .book-card {
+        padding: 1rem;
+    }
 
-.tickets-list { display: flex; flex-direction: column; gap: 1rem; }
+    .book-timing {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 
-.ticket {
-    background: white;
-    border-radius: 12px;
-    border: 1px solid #e0e0e0;
-    overflow: hidden;
-}
+    .book-timing .point {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
 
-.ticket-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.25rem;
-    background: #f8f9fa;
-    border-bottom: 1px dashed #ddd;
-}
-.header-left { display: flex; flex-direction: column; gap: 0.25rem; }
-.header-left .pnr { font-size: 0.85rem; font-weight: 600; color: #333; }
-.header-left .train { font-size: 0.8rem; color: #666; }
-.status {
-    padding: 0.3rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-}
-.status.confirmed { background: #e8f4ea; color: #16c784; }
-.status.cancelled { background: #ffe8e8; color: #ff4757; }
+    .book-timing .line {
+        display: none;
+    }
 
-.ticket-body { padding: 1.25rem; }
+    .class-options {
+        flex-direction: column;
+    }
 
-.route-section {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-.route-section .station { text-align: center; }
-.route-section .time {
-    display: block;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #333;
-}
-.route-section .name {
-    display: block;
-    font-size: 0.8rem;
-    color: #666;
-    margin-top: 0.25rem;
-}
-.route-section .route-line {
-    flex: 1;
-    text-align: center;
-    position: relative;
-}
-.route-section .route-line::before,
-.route-section .route-line::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 40%;
-    height: 2px;
-    background: #ddd;
-}
-.route-section .route-line::before { left: 0; }
-.route-section .route-line::after { right: 0; }
-.route-section .duration {
-    font-size: 0.75rem;
-    color: #888;
-    background: white;
-    padding: 0 0.5rem;
-    position: relative;
-    z-index: 1;
+    .success-card {
+        margin: 1rem;
+    }
+
+    .success-header {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .success-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+
+    .info-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
 
-.info-section {
-    display: flex;
-    gap: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid #eee;
-}
-.info-section .info { display: flex; flex-direction: column; }
-.info-section .label { font-size: 0.7rem; color: #888; margin-bottom: 0.2rem; }
-.info-section .value { font-size: 0.9rem; font-weight: 600; color: #333; }
-.info-section .value.price { color: #16c784; }
+@media (max-width: 480px) {
+    .book-header .route {
+        font-size: 0.9rem;
+    }
 
-.ticket-actions {
-    display: flex;
-    gap: 0.75rem;
-    padding: 1rem 1.25rem;
-    background: #f8f9fa;
-    border-top: 1px solid #eee;
-}
-.track-btn, .cancel-btn {
-    flex: 1;
-    padding: 0.6rem;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    cursor: pointer;
-    border: none;
-}
-.track-btn {
-    background: white;
-    border: 1px solid #ddd;
-    color: #333;
-}
-.track-btn:hover { background: #f5f5f5; }
-.cancel-btn {
-    background: #ff4757;
-    color: white;
-}
-.cancel-btn:hover { background: #e63946; }
+    .book-train-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
 
-.search-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-}
+    .class-option {
+        padding: 0.6rem;
+    }
 
-.sort-options {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-.sort-options span {
-    font-size: 0.85rem;
-    color: #666;
-}
-.sort-checks {
-    display: flex;
-    gap: 1rem;
-}
-.sort-check {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-size: 0.85rem;
-    cursor: pointer;
-}
-.sort-check input { cursor: pointer; }
-.dir-btn {
-    background: none;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 0.1rem 0.3rem;
-    cursor: pointer;
-    font-size: 0.8rem;
-}
-.dir-btn:hover { background: #f5f5f5; }
+    .price-summary {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
 
-.train-route-bg {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    background: #e8f5e9;
-    border-radius: 8px;
-}
-.route-from, .route-to {
-    text-align: center;
-    flex: 1;
-}
-.station-code {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #1a1a2e;
-}
-.station-name {
-    display: block;
-    font-size: 0.75rem;
-    color: #555;
-    margin-top: 0.25rem;
-}
-.route-arrow {
-    font-size: 1.5rem;
-    color: #888;
-}
+    .price-summary .total {
+        font-size: 1.25rem;
+    }
 
-.train-class-price {
-    font-size: 0.85rem;
-    color: #666;
-}
-
-.track-page {
-    max-width: 700px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-.track-card {
-    background: white;
-    border-radius: 12px;
-    border: 1px solid #e0e0e0;
-    overflow: hidden;
-}
-
-.track-header {
-    padding: 1rem 1.5rem;
-    background: #f8f9fa;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.track-header .back-link {
-    color: #0066ff;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-.track-header h2 {
-    margin: 0;
-    font-size: 1.1rem;
-    color: #333;
-}
-
-.train-info {
-    padding: 1.5rem;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-}
-
-.train-info h3 {
-    margin: 0 0 0.5rem 0;
-    color: #1a1a2e;
-}
-
-.train-info .route {
-    margin: 0;
-    font-size: 1rem;
-    color: #666;
-}
-
-.train-info .date {
-    margin: 0.25rem 0 0 0;
-    font-size: 0.85rem;
-    color: #888;
-}
-
-.status-text {
-    padding: 1.5rem;
-    text-align: center;
-    font-size: 1rem;
-    color: #333;
-    font-weight: 500;
-}
-
-.progress-section {
-    padding: 2rem 1.5rem;
-}
-
-.progress-track {
-    position: relative;
-    height: 40px;
-    margin-bottom: 0.5rem;
-}
-
-.progress-line {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: #e0e0e0;
-    transform: translateY(-50%);
-    border-radius: 2px;
-}
-
-.progress-fill {
-    height: 100%;
-    background: #16c784;
-    border-radius: 2px;
-    transition: width 0.3s ease;
-}
-
-.train-marker {
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: left 0.3s ease;
-}
-
-.train-icon {
-    font-size: 1.5rem;
-}
-
-.station-labels {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.85rem;
-    color: #666;
-}
-
-.timing-info {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    padding: 1.5rem;
-    background: #f8f9fa;
-    border-top: 1px solid #eee;
-}
-
-.timing-item {
-    text-align: center;
-}
-
-.timing-item .label {
-    display: block;
-    font-size: 0.75rem;
-    color: #888;
-    margin-bottom: 0.25rem;
-}
-
-.timing-item .value {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #333;
-}
-
-.booking-ref {
-    padding: 1rem;
-    text-align: center;
-    border-top: 1px solid #eee;
-    font-size: 0.85rem;
-    color: #888;
-}
-
-.back-btn {
-    display: inline-block;
-    padding: 0.6rem 1.5rem;
-    background: #0066ff;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    margin-top: 1rem;
-}
-
-.loading-spinner {
-    padding: 3rem;
-    text-align: center;
-    color: #666;
+    .success-body {
+        padding: 1rem;
+    }
 }

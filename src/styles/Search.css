@@ -1,0 +1,324 @@
+.search-results {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.search-results h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.train-list { display: flex; flex-direction: column; gap: 1rem; }
+
+.train-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+
+.train-route-header { margin-bottom: 0.5rem; }
+
+.route-tag {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+.train-name-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.train-name-row h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #1a1a2e;
+}
+
+.train-number {
+    font-size: 0.8rem;
+    color: #888;
+    font-weight: 500;
+}
+
+.train-time-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.time-info { text-align: center; min-width: 100px; }
+
+.time-info .time {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.time-info .station {
+    display: block;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.duration-info {
+    flex: 1;
+    text-align: center;
+}
+
+.duration-info .via {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+
+.duration-info .duration {
+    display: block;
+    font-size: 0.75rem;
+    color: #999;
+}
+
+.train-run-days {
+    display: flex;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+}
+
+.train-run-days .day {
+    background: #e8f0ff;
+    color: #0066cc;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.train-classes {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1rem;
+}
+
+.class-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60px;
+}
+
+.class-item .class-code {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #333;
+    background: #f5f5f5;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.3rem;
+}
+
+.class-item .class-avail {
+    font-size: 0.9rem;
+    color: #16c784;
+    font-weight: 500;
+}
+
+.class-item.unavailable .class-avail {
+    color: #ff4757;
+}
+
+.check-avail-btn {
+    padding: 0.6rem 1.5rem;
+    background: #0066ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.check-avail-btn:hover { background: #0052cc; }
+
+.search-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.sort-options {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.sort-options span {
+    font-size: 0.85rem;
+    color: #666;
+}
+.sort-checks {
+    display: flex;
+    gap: 1rem;
+}
+.sort-check {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+.sort-check input { cursor: pointer; }
+.dir-btn {
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.1rem 0.3rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+.dir-btn:hover { background: #f5f5f5; }
+
+.train-route-bg {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #e8f5e9;
+    border-radius: 8px;
+}
+.route-from, .route-to {
+    text-align: center;
+    flex: 1;
+}
+.station-code {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+.station-name {
+    display: block;
+    font-size: 0.75rem;
+    color: #555;
+    margin-top: 0.25rem;
+}
+.route-arrow {
+    font-size: 1.5rem;
+    color: #888;
+}
+
+.train-class-price {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .search-results {
+        padding: 0 0.5rem;
+        margin: 1rem auto;
+    }
+
+    .search-top {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .train-route-bg {
+        padding: 0.75rem;
+    }
+
+    .station-code {
+        font-size: 1.2rem;
+    }
+
+    .train-time-row {
+        gap: 0.75rem;
+    }
+
+    .time-info {
+        min-width: 70px;
+    }
+
+    .time-info .time {
+        font-size: 1rem;
+    }
+
+    .duration-info .via {
+        font-size: 0.7rem;
+    }
+
+    .train-classes {
+        gap: 0.75rem;
+        overflow-x: auto;
+        flex-wrap: wrap;
+    }
+
+    .class-item {
+        min-width: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-results h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .train-card {
+        padding: 1rem;
+    }
+
+    .train-route-bg {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .route-from, .route-to {
+        width: 100%;
+    }
+
+    .route-arrow {
+        transform: rotate(90deg);
+    }
+
+    .train-name-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    .train-time-row {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .time-info {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .duration-info {
+        width: 100%;
+        padding: 0.25rem 0;
+    }
+
+    .train-run-days {
+        flex-wrap: wrap;
+    }
+
+    .train-classes {
+        justify-content: flex-start;
+    }
+}
