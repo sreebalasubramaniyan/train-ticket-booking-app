@@ -1,5 +1,5 @@
 import { trains } from '../../data/data'
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 function isValidDate(dateStr) {
@@ -24,9 +24,24 @@ function findTrains(data) {
   });
 }
 
+function parseDuration(duration) {
+  const match = duration.match(/(\d+)h\s*(\d+)?m?/);
+  if (match) {
+    const hours = parseInt(match[1]);
+    const mins = match[2] ? parseInt(match[2]) : 0;
+    return hours * 60 + mins;
+  }
+  return 0;
+}
+
 export default function Search() {
   const { state } = useLocation();
+  const navigate = useNavigate();
   const [results, setResults] = useState([]);
+  const [sortOptions, setSortOptions] = useState({
+    price: { enabled: false, ascending: true },
+    duration: { enabled: false, ascending: true },
+  });
 
   useEffect(() => {
     if (state) {
@@ -38,6 +53,50 @@ export default function Search() {
       setResults(found);
     }
   }, [state]);
+
+  const handleBook = (train) => {
+    const user = localStorage.getItem('currentUser');
+    if (!user) {
+      navigate('/login');
+      return;
+    }
+    navigate('/book', { state: { train, search: state } });
+  };
+
+  const toggleSort = (key) => {
+    setSortOptions(prev => ({
+      ...prev,
+      [key]: { ...prev[key], enabled: !prev[key].enabled }
+    }));
+  };
+
+  const toggleDirection = (key) => {
+    setSortOptions(prev => ({
+      ...prev,
+      [key]: { ...prev[key], ascending: !prev[key].ascending }
+    }));
+  };
+
+  const sortedResults = [...results].sort((a, b) => {
+    let comparisons = [];
+
+    if (sortOptions.price.enabled) {
+      const minPriceA = Math.min(...a.classes.map(c => c.price));
+      const minPriceB = Math.min(...b.classes.map(c => c.price));
+      const dir = sortOptions.price.ascending ? 1 : -1;
+      comparisons.push((minPriceA - minPriceB) * dir);
+    }
+
+    if (sortOptions.duration.enabled) {
+      const dir = sortOptions.duration.ascending ? 1 : -1;
+      comparisons.push((parseDuration(a.duration) - parseDuration(b.duration)) * dir);
+    }
+
+    for (let cmp of comparisons) {
+      if (cmp !== 0) return cmp;
+    }
+    return 0;
+  });
 
   if (!state || !state.date) {
     return (
@@ -65,12 +124,59 @@ export default function Search() {
 
   return (
     <div className="search-results">
-      <h2>Available Trains</h2>
+      <div className="search-top">
+        <h2>Available Trains</h2>
+        <div className="sort-options">
+          <span>Sort by:</span>
+          <div className="sort-checks">
+            <label className="sort-check">
+              <input
+                type="checkbox"
+                checked={sortOptions.price.enabled}
+                onChange={() => toggleSort('price')}
+              />
+              Price
+              {sortOptions.price.enabled && (
+                <button
+                  className="dir-btn"
+                  onClick={() => toggleDirection('price')}
+                >
+                  {sortOptions.price.ascending ? '↑' : '↓'}
+                </button>
+              )}
+            </label>
+            <label className="sort-check">
+              <input
+                type="checkbox"
+                checked={sortOptions.duration.enabled}
+                onChange={() => toggleSort('duration')}
+              />
+              Duration
+              {sortOptions.duration.enabled && (
+                <button
+                  className="dir-btn"
+                  onClick={() => toggleDirection('duration')}
+                >
+                  {sortOptions.duration.ascending ? '↑' : '↓'}
+                </button>
+              )}
+            </label>
+          </div>
+        </div>
+      </div>
       <div className="train-list">
-        {results.map((train, index) => (
+        {sortedResults.map((train, index) => (
           <div key={index} className="train-card">
-            <div className="train-route-header">
-              <span className="route-tag">{train.from} - {train.to}</span>
+            <div className="train-route-bg">
+              <div className="route-from">
+                <span className="station-code">{train.from.split(' ').map(w => w[0]).join('')}</span>
+                <span className="station-name">{train.from}</span>
+              </div>
+              <div className="route-arrow">→</div>
+              <div className="route-to">
+                <span className="station-code">{train.to.split(' ').map(w => w[0]).join('')}</span>
+                <span className="station-name">{train.to}</span>
+              </div>
             </div>
             <div className="train-name-row">
               <h3>{train.name}</h3>
@@ -104,10 +210,15 @@ export default function Search() {
                   <span className="class-avail">
                     {cls.available > 0 ? cls.available : 'NA'}
                   </span>
+                  <span className="class-price">
+                    {cls.price > 0 ? `₹${cls.price}` : '-'}
+                  </span>
                 </div>
               ))}
             </div>
-            <button className="check-avail-btn">Check Availability</button>
+            <button onClick={() => handleBook(train)} className="book-btn">
+              Book
+            </button>
           </div>
         ))}
       </div>

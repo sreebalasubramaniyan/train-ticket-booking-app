@@ -158,6 +158,7 @@
     background: #e8f0ff;
     color: #0066cc;
     padding: 0.2rem 0.5rem;
+    
     border-radius: 4px;
     font-size: 0.75rem;
     font-weight: 500;
@@ -209,3 +210,782 @@
     font-size: 0.9rem;
 }
 .check-avail-btn:hover { background: #0052cc; }
+
+.user-section {
+    position: relative;
+    display: inline-block;
+    margin-left: 1.5rem;
+}
+
+.user-link {
+    color: white;
+    cursor: pointer;
+}
+
+.user-popup {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    min-width: 200px;
+    z-index: 1000;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.user-info {
+    padding: 1rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #eee;
+}
+
+.user-info .user-name {
+    margin: 0;
+    font-weight: 600;
+    color: #333;
+}
+
+.user-info .user-email {
+    margin: 0.25rem 0 0 0;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.user-actions {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-actions a,
+.user-actions button {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.user-actions a:hover,
+.user-actions button:hover {
+    background: #f5f5f5;
+}
+
+.user-actions button {
+    color: #ff4757;
+    border-top: 1px solid #eee;
+}
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.login-form {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-form h2 {
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+    color: #1a1a2e;
+}
+
+.login-form .error {
+    color: #ff4757;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #0066ff;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: #16c784;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+.login-btn:hover { background: #14a86e; }
+
+.switch-mode {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #666;
+}
+.switch-mode .link { color: #0066ff; cursor: pointer; }
+.switch-mode .link:hover { text-decoration: underline; }
+
+.book-btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    background: #0066ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+}
+.book-btn:hover { background: #0052cc; }
+
+.book-page {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.book-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.book-header { margin-bottom: 0.5rem; }
+.book-header .route {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+.book-train-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.book-train-info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #1a1a2e;
+}
+.book-train-info .number {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.book-timing {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.book-timing .point {
+    text-align: center;
+    min-width: 80px;
+}
+.book-timing .point .time {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+}
+.book-timing .point .station {
+    display: block;
+    font-size: 0.9rem;
+    color: #555;
+}
+.book-timing .point .date {
+    display: block;
+    font-size: 0.75rem;
+    color: #888;
+}
+
+.book-timing .line {
+    flex: 1;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.selection-section {
+    margin-bottom: 1.5rem;
+}
+.selection-section h4 {
+    margin: 0 0 0.75rem 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.class-options {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.class-option {
+    flex: 1;
+    padding: 0.75rem;
+    border: 2px solid #eee;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+}
+.class-option:hover { border-color: #0066ff; }
+.class-option.selected { border-color: #0066ff; background: #f0f5ff; }
+
+.class-option .cls-name {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.25rem;
+}
+.class-option .cls-price {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+.class-option .cls-avail {
+    display: block;
+    font-size: 0.75rem;
+    color: #16c784;
+    margin-top: 0.25rem;
+}
+
+.seats-input {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.seats-input button {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.seats-input button:hover { background: #f5f5f5; }
+.seats-input span {
+    font-size: 1.25rem;
+    font-weight: 600;
+    min-width: 40px;
+    text-align: center;
+}
+
+.price-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-top: 1px solid #eee;
+    margin-bottom: 1rem;
+}
+.price-summary span { color: #666; font-size: 1rem; }
+.price-summary .total {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.confirm-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: #16c784;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.confirm-btn:hover { background: #14a86e; }
+.confirm-btn:disabled { background: #ccc; cursor: not-allowed; }
+
+.success-card {
+    max-width: 700px;
+    margin: 2rem auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.success-header {
+    background: #16c784;
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.success-icon {
+    width: 50px;
+    height: 50px;
+    background: white;
+    color: #16c784;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+.success-title h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+.success-title .pnr {
+    margin: 0.25rem 0 0 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.success-body {
+    padding: 1.5rem;
+}
+
+.info-row {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+.info-row:last-child { margin-bottom: 0; }
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+}
+.info-item .label {
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 0.25rem;
+}
+.info-item .value {
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+}
+.info-item .sub { font-size: 0.8rem; color: #888; }
+.info-item .arrow { font-size: 0.9rem; color: #888; margin: 0.25rem 0; }
+.info-item .price { color: #16c784; font-size: 1.25rem; }
+
+.success-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.success-footer .status {
+    padding: 0.4rem 1rem;
+    background: #e8f4ea;
+    color: #16c784;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.mybooks-page {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+.mybooks-page h2 { margin-bottom: 1.5rem; color: #333; }
+
+.no-bookings {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+}
+.no-bookings p { color: #666; margin-bottom: 1rem; }
+.book-now-btn {
+    padding: 0.6rem 1.5rem;
+    background: #0066ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-block;
+}
+.book-now-btn:hover { background: #0052cc; }
+
+.tickets-list { display: flex; flex-direction: column; gap: 1rem; }
+
+.ticket {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    background: #f8f9fa;
+    border-bottom: 1px dashed #ddd;
+}
+.header-left { display: flex; flex-direction: column; gap: 0.25rem; }
+.header-left .pnr { font-size: 0.85rem; font-weight: 600; color: #333; }
+.header-left .train { font-size: 0.8rem; color: #666; }
+.status {
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+.status.confirmed { background: #e8f4ea; color: #16c784; }
+.status.cancelled { background: #ffe8e8; color: #ff4757; }
+
+.ticket-body { padding: 1.25rem; }
+
+.route-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.route-section .station { text-align: center; }
+.route-section .time {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+.route-section .name {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.25rem;
+}
+.route-section .route-line {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+.route-section .route-line::before,
+.route-section .route-line::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 2px;
+    background: #ddd;
+}
+.route-section .route-line::before { left: 0; }
+.route-section .route-line::after { right: 0; }
+.route-section .duration {
+    font-size: 0.75rem;
+    color: #888;
+    background: white;
+    padding: 0 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.info-section {
+    display: flex;
+    gap: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+.info-section .info { display: flex; flex-direction: column; }
+.info-section .label { font-size: 0.7rem; color: #888; margin-bottom: 0.2rem; }
+.info-section .value { font-size: 0.9rem; font-weight: 600; color: #333; }
+.info-section .value.price { color: #16c784; }
+
+.ticket-actions {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    background: #f8f9fa;
+    border-top: 1px solid #eee;
+}
+.track-btn, .cancel-btn {
+    flex: 1;
+    padding: 0.6rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+}
+.track-btn {
+    background: white;
+    border: 1px solid #ddd;
+    color: #333;
+}
+.track-btn:hover { background: #f5f5f5; }
+.cancel-btn {
+    background: #ff4757;
+    color: white;
+}
+.cancel-btn:hover { background: #e63946; }
+
+.search-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.sort-options {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.sort-options span {
+    font-size: 0.85rem;
+    color: #666;
+}
+.sort-checks {
+    display: flex;
+    gap: 1rem;
+}
+.sort-check {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+.sort-check input { cursor: pointer; }
+.dir-btn {
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.1rem 0.3rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+.dir-btn:hover { background: #f5f5f5; }
+
+.train-route-bg {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #e8f5e9;
+    border-radius: 8px;
+}
+.route-from, .route-to {
+    text-align: center;
+    flex: 1;
+}
+.station-code {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+.station-name {
+    display: block;
+    font-size: 0.75rem;
+    color: #555;
+    margin-top: 0.25rem;
+}
+.route-arrow {
+    font-size: 1.5rem;
+    color: #888;
+}
+
+.train-class-price {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.track-page {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.track-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+}
+
+.track-header {
+    padding: 1rem 1.5rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.track-header .back-link {
+    color: #0066ff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.track-header h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.train-info {
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.train-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: #1a1a2e;
+}
+
+.train-info .route {
+    margin: 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+.train-info .date {
+    margin: 0.25rem 0 0 0;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.status-text {
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.progress-section {
+    padding: 2rem 1.5rem;
+}
+
+.progress-track {
+    position: relative;
+    height: 40px;
+    margin-bottom: 0.5rem;
+}
+
+.progress-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #e0e0e0;
+    transform: translateY(-50%);
+    border-radius: 2px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #16c784;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.train-marker {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: left 0.3s ease;
+}
+
+.train-icon {
+    font-size: 1.5rem;
+}
+
+.station-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.timing-info {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-top: 1px solid #eee;
+}
+
+.timing-item {
+    text-align: center;
+}
+
+.timing-item .label {
+    display: block;
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 0.25rem;
+}
+
+.timing-item .value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.booking-ref {
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #eee;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    background: #0066ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 1rem;
+}
