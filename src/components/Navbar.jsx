@@ -40,7 +40,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-brand">
         <div className="logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
-          <img src="/src/assets/image.png" alt="Rail Nova Logo" />
+          <img src="./src/assets/train-47980.png" alt="Rail Nova Logo" />
         </div>
         <span className="brand-name">Rail Nova</span>
       </div>
@@ -49,22 +49,9 @@ export default function Navbar() {
         <Link to="/book" onClick={closeMenu}>Book</Link>
         <Link to="/mybooks" onClick={closeMenu}>My Books</Link>
         {user ? (
-          <div className="user-section">
-            <span className="user-link" onClick={() => setShowUserMenu(!showUserMenu)}>
-              User
-            </span>
-            {showUserMenu && (
-              <div className="user-popup">
-                <div className="user-info">
-                  <p className="user-name">{user.username}</p>
-                  <p className="user-email">{user.email}</p>
-                </div>
-                <div className="user-actions">
-                  <button onClick={handleLogout}>Logout</button>
-                </div>
-              </div>
-            )}
-          </div>
+          <Link to="/user" className="user-link" onClick={closeMenu}>
+            User
+          </Link>
         ) : (
           <Link to="/login" onClick={closeMenu}>Login</Link>
         )}

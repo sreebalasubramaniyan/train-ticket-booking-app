@@ -15,13 +15,13 @@
 .no-bookings p { color: #666; margin-bottom: 1rem; }
 .book-now-btn {
     padding: 0.6rem 1.5rem;
-    background: #0066ff;
+    background: #e94560;
     color: white;
     text-decoration: none;
     border-radius: 6px;
     display: inline-block;
 }
-.book-now-btn:hover { background: #0052cc; }
+.book-now-btn:hover { background: #c73e54; }
 
 .tickets-list { display: flex; flex-direction: column; gap: 1rem; }
 
@@ -127,15 +127,15 @@
 }
 .track-btn {
     background: white;
-    border: 1px solid #ddd;
-    color: #333;
+    border: 1px solid #e94560;
+    color: #e94560;
 }
-.track-btn:hover { background: #f5f5f5; }
+.track-btn:hover { background: #e94560; color: white; }
 .cancel-btn {
-    background: #ff4757;
+    background: #1a1a2e;
     color: white;
 }
-.cancel-btn:hover { background: #e63946; }
+.cancel-btn:hover { background: #333; }
 
 /* Responsive */
 @media (max-width: 768px) {
