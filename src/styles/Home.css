@@ -24,18 +24,10 @@
   z-index: 0;
 }
 
-.hero-content {
+.hero-title {
   position: relative;
   z-index: 1;
-  max-width: 700px;
-  padding: 2rem;
-  background: transparent;
-  border-radius: 16px;
-  box-shadow: none;
-}
-
-.hero-title {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 1.5rem;
@@ -46,23 +38,27 @@
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
-.hero-content .typewriter {
+.typewriter {
+  position: relative;
+  z-index: 1;
   margin-bottom: 2.5rem;
 }
 
-.hero-content .typewriter-text {
+.typewriter-text {
   font-size: 1.5rem;
-  color: white;
+  color: ;
   font-weight: 500;
 }
 
-.hero-content .cursor {
+.cursor {
   font-size: 1.5rem;
-  color: white;
+  color: black;
   animation: blink 1s infinite;
 }
 
 .hero-buttons {
+  position: relative;
+  z-index: 1;
   display: flex;
   gap: 1.5rem;
   justify-content: center;
@@ -200,16 +196,11 @@
     padding: 3rem 1.5rem 2rem;
   }
 
-  .hero-content {
-    max-width: 90%;
-    padding: 1.5rem;
-  }
-
   .hero-title {
     font-size: 2.5rem;
   }
 
-  .hero-content .typewriter-text {
+  .typewriter-text {
     font-size: 1.3rem;
   }
 
@@ -235,25 +226,20 @@
     align-items: center;
   }
 
-  .hero-content {
-    max-width: 95%;
-    padding: 1.25rem;
-  }
-
   .hero-title {
     font-size: 1.6rem;
     margin-bottom: 1rem;
   }
 
-  .hero-content .typewriter {
+  .typewriter {
     margin-bottom: 2rem;
   }
 
-  .hero-content .typewriter-text {
+  .typewriter-text {
     font-size: 1.1rem;
   }
 
-  .hero-content .cursor {
+  .cursor {
     font-size: 1.1rem;
   }
 
@@ -319,16 +305,12 @@
 }
 
 @media (max-width: 375px) {
-  .hero-content {
-    padding: 1rem;
-  }
-
   .hero-title {
     font-size: 1.4rem;
   }
 
-  .hero-content .typewriter-text,
-  .hero-content .cursor {
+  .typewriter-text,
+  .cursor {
     font-size: 1rem;
   }
 
