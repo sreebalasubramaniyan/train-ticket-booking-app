@@ -44,9 +44,7 @@ const trainNames = [
   "Tejas Express",
   "Double Decker Express",
   "Mail Express",
-  "SF Express",
-
-  // 🔥 Added more realistic names
+  "SF Express", 
   "Uday Express",
   "Antyodaya Express",
   "Sampark Kranti Express",

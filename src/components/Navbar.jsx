@@ -6,6 +6,7 @@ export default function Navbar() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem('currentUser');
@@ -33,12 +34,20 @@ export default function Navbar() {
     navigate('/');
   };
 
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <nav className="navbar">
-      <div className="logo">Train Booking</div>
-      <div className="nav-links">
-        <Link to="/">Home</Link>
-        <Link to="/mybooks">My Books</Link>
+      <div className="navbar-brand">
+        <div className="logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+          <img src="/src/assets/image.png" alt="Rail Nova Logo" />
+        </div>
+        <span className="brand-name">Rail Nova</span>
+      </div>
+      <div className={`nav-links ${menuOpen ? 'mobile-open' : ''}`}>
+        <Link to="/" onClick={closeMenu}>Home</Link>
+        <Link to="/book" onClick={closeMenu}>Book</Link>
+        <Link to="/mybooks" onClick={closeMenu}>My Books</Link>
         {user ? (
           <div className="user-section">
             <span className="user-link" onClick={() => setShowUserMenu(!showUserMenu)}>
@@ -57,9 +66,18 @@ export default function Navbar() {
             )}
           </div>
         ) : (
-          <Link to="/login">Login</Link>
+          <Link to="/login" onClick={closeMenu}>Login</Link>
         )}
       </div>
+      <button
+        className={`hamburger ${menuOpen ? 'active' : ''}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </nav>
   );
 }

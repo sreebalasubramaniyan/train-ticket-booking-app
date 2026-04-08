@@ -33,7 +33,7 @@ export default function MyBooks() {
         <h2>My Bookings</h2>
         <div className="no-bookings">
           <p>No bookings yet.</p>
-          <Link to="/" className="book-now-btn">Book Now</Link>
+          <Link to="/book" className="book-now-btn">Book Now</Link>
         </div>
       </div>
     );

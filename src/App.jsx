@@ -6,6 +6,7 @@ import MyBooks from "./components/MyBooks";
 import Login from "./components/Login";
 import Navbar from "./components/Navbar";
 import TrackTrain from "./components/TrackTrain";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
           <Route path ="/login" element={<Login />} />
           <Route path ="/track" element={<TrackTrain />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
